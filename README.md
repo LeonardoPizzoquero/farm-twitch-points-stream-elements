@@ -38,6 +38,8 @@
 
 **5. Fill the fields in .env like below:**
 
+![Print](https://github.com/LeonardoPizzoquero/farm-twitch-points-stream-elements/blob/main/screenshots/envexample.png)
+
 **6. Go back to your terminal and install all dependencies, running:**
 
 ```sh
