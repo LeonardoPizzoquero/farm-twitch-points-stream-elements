@@ -28,7 +28,7 @@ async function getAccessToken() {
 
 async function checkIfStreamerIsLive(streamerChannel, accessToken) {
   try {
-    const response = await axios.get(`https://api.twitch.tv/helix/search/channels?query=${streamerChannel}`, {
+    const response = await axios.get(`https://api.twitch.tv/helix/search/channels?query=${streamerChannel.toLowerCase()}`, {
       headers: {
         'client-id': clientId,
         'Authorization': `Bearer ${accessToken}`
@@ -36,7 +36,7 @@ async function checkIfStreamerIsLive(streamerChannel, accessToken) {
     })
 
     const streamerData = response.data.data.find((currentStreamer) => {
-      return currentStreamer.display_name === streamerChannel
+      return currentStreamer.display_name.toLowerCase() === streamerChannel.toLowerCase()
     })
 
     return streamerData.is_live
