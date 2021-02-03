@@ -2,3 +2,5 @@
 node_modules
 *.txt
 *.bat
+*.log
+*.lock
